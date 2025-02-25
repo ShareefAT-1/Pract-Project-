@@ -1,6 +1,8 @@
 
 import './App.css'
-import Home from './Home'
+import Search from './components/Search'
+import Details from './pages/Details'
+import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 
@@ -8,9 +10,11 @@ function App() {
 
   return (
     <>
-    <Home/>
+    {/* <Home/> */}
     {/* <Login/> */}
     {/* <Register/> */}
+    <Search/>
+    {/* <Details/> */}
     </>
   )
 }
