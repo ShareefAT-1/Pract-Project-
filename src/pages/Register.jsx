@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
+  const navigate=useNavigate();
   return (
     <div className=" reg-bg bg-cover bg-center" >
       <div className="flex items-center min-h-screen " style={{marginLeft:"50px"}}>
@@ -48,6 +50,11 @@ const Register = () => {
                 Forgot password?
               </a>
             </div>
+
+            <button className="mt-3 ml-[152px] bg-emerald-700 hover:bg-emerald-800 text-white px-4 py-2 rounded"
+           onClick={() => navigate("/login")}>
+            Login
+          </button>
 
             <div className="mt-4 text-center">
               <a href="#" className="">

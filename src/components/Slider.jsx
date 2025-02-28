@@ -1,3 +1,4 @@
+// Slider.jsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -26,10 +27,10 @@ const Slider = () => {
   };
 
   return (
-    <div className="relative w-[1000px] mx-auto mt-6 overflow-hidden">
+    <div className="relative w-[1200px] mx-auto mt-8 overflow-hidden"> {/* Increased from 1000px to 1200px */}
       {books.length > 0 ? (
         <div>
-          <div className="flex gap-5 transition-all duration-300">
+          <div className="flex gap-6 transition-all duration-300"> {/* Increased gap from 5 to 6 */}
             {books
               .slice(startIndex, startIndex + visibleImages)
               .concat(
@@ -43,27 +44,27 @@ const Slider = () => {
                   key={book.id}
                   src={book.image}
                   alt={"Error"}
-                  className="hov flex w-[180px] h-[120px] object-cover rounded-lg"
+                  className="hov flex w-[220px] h-[150px] object-cover rounded-lg"
                 />
               ))}
           </div>
 
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-full"
+            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-3 rounded-full"
           >
             ❮
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-full"
+            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-3 rounded-full"
           >
             ❯
           </button>
         </div>
       ) : (
-        alert("Enter Something 🤦‍♂️")
+        <p className="text-center text-xl">No books found</p>
       )}
     </div>
   );

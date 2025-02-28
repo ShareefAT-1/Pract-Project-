@@ -8,7 +8,7 @@
 .hov:hover{
     /* flex: 2; */
     flex: auto;
-    scale: 1.5;
+    scale: 1.15;
     transition-duration: 0.5s;
 }
 .b{
