@@ -5,15 +5,19 @@ import axios from "axios";
 const Slider = () => {
   const [books, setBooks] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
+  const [loading, setLoading] = useState(false);
   const visibleImages = 5;
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get("https://www.dbooks.org/api/recent")
       .then((res) => {
         setBooks(res.data.books);
+        setLoading(false);
       })
       .catch((err) => {
+        setLoading(false);
         console.log(err);
       });
   }, []);
@@ -27,10 +31,14 @@ const Slider = () => {
   };
 
   return (
-    <div className="relative w-[1200px] mx-auto mt-8 overflow-hidden"> {/* Increased from 1000px to 1200px */}
+    <div className="relative w-[1200px] mx-auto mt-8 overflow-hidden">
+      {" "}
+      {/* Increased from 1000px to 1200px */}
       {books.length > 0 ? (
         <div>
-          <div className="flex gap-6 transition-all duration-300"> {/* Increased gap from 5 to 6 */}
+          <div className="flex gap-6 transition-all duration-300">
+            {" "}
+            {/* Increased gap from 5 to 6 */}
             {books
               .slice(startIndex, startIndex + visibleImages)
               .concat(
@@ -64,7 +72,9 @@ const Slider = () => {
           </button>
         </div>
       ) : (
-        <p className="text-center text-xl">No books found</p>
+        <div class="bg-white rounded-xl p-4 shadow-lg space-y-3">
+          <div class="w-full h-48 rounded animate-shimmer"></div>
+        </div>
       )}
     </div>
   );

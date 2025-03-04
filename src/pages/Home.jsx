@@ -6,7 +6,7 @@ import SearchBox from "../components/Searchbox";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   // useEffect(() => {
   //   axios.get("https://www.dbooks.org/api/recent")
   //     .then((res) => {
@@ -16,6 +16,7 @@ const Home = () => {
   //       console.error("Error fetching books:", error);
   //     });
   // }, []);
+  const user=JSON.parse(localStorage.getItem("user"))
 
   return (
     <div>
@@ -25,18 +26,21 @@ const Home = () => {
         </div>
         <ul className="flex space-x-6">
           <li>
-            <a href="#" className="hover:text-gray-400"
-            onClick={()=>navigate("/allbooks")}>
+            <a
+              href="#"
+              className="hover:text-gray-400"
+              onClick={() => navigate("/allbooks")}
+            >
               All Books
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-gray-400">
+            <a href="/aboutus" className="hover:text-gray-400">
               About Us
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-gray-400">
+            <a href="/awards" className="hover:text-gray-400">
               Awards
             </a>
           </li>
@@ -52,24 +56,33 @@ const Home = () => {
             placeholder="Search..."
             className="bg-fuchsia-900 px-10 py-2 rounded text-white focus:outline-none focus:ring focus:ring-gray-600"
           /> */}
-          <SearchBox/>
-          <button className=" bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded"
-           onClick={() => navigate("/login")}>
-            Login
-          </button>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
-           onClick={() => navigate("/register")}>
-            Register
-          </button>
+          <SearchBox />
+          {!user?<div>
+
+            <button
+              className=" bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded mr-3"
+              onClick={() => navigate("/login")}
+            >
+              Login
+            </button>
+            <button
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+              onClick={() => navigate("/register")}
+            >
+              Register
+            </button>
+
+          </div>:<h1 onClick={()=>navigate("/profile")}>
+            {user.username} 
+            </h1>}
         </div>
       </nav>
 
-      <div className="flex justify-center mt-5">
-        <div className="bg-amber-700 h-[84px]" style={{ width: "750px" }}>
+      {/* <div className="flex justify-center mt-5">
+        <div className=" h-[54px]" style={{ width: "750px" }}>
         </div>
-      </div>
-
-      <div>
+      </div> */}
+      <div className=" mt-7">
         <Slider />
       </div>
       <div>
@@ -81,7 +94,6 @@ const Home = () => {
       <div>
         <Slider />
       </div>
-
     </div>
   );
 };

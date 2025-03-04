@@ -1,59 +1,57 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex p-16 gap-10">
-      <div className=" w-[5000px]">
+    <div className="flex flex-row p-16 gap-14">
+
+      <div className="w-full md:w-[500px] flex justify-center">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/YouTube_results_screenshot.jpg/640px-YouTube_results_screenshot.jpg"
-          alt=""
+          src="https://s.tmimgcdn.com/scr/800x500/48200/library-responsive-website-template_48292-original.jpg"
+          alt="Storyline"
+          className="rounded-lg shadow-lg"
         />
       </div>
 
-      <div>
-        <p>
-          <p className="text-4xl">The SAG-AFTRA Foundation’s</p> three-time Emmy®-nominated and
-          award-winning children’s literacy website, Storyline Online®, streams
-          videos featuring celebrated actors reading children’s books alongside
-          creatively produced illustrations. Readers include Connie Britton,
-          Terry Crews, Viola Davis, Rosario Dawson, Jennifer Garner, John
-          Lithgow, Chris Pine, Meryl Streep, Oprah Winfrey and dozens more.
-          Reading aloud to children has been shown to improve reading, writing
-          and communication skills, <p className="text-emerald-600">logical thinking and concentration,</p> and
-          general academic aptitude, as well as inspire a lifelong love of
-          reading. Teachers use Storyline Online in their classrooms, and
-          doctors and nurses play Storyline Online in children’s hospitals.
-          Storyline Online is available 24 hours a day for children, parents,
-          caregivers and educators worldwide. Each book includes supplemental
-          curriculum developed by a credentialed elementary educator, aiming to
-          strengthen comprehension and verbal and written 
-          
+      <div className="w-full md:w-[900px]">
+        <h1 className="text-4xl text-blue-400 mb-3">The SAG-AFTRA Foundation’s</h1>
+        <p className="text-lg leading-relaxed text-gray-200">
+          Three-time Emmy®-nominated and award-winning children’s literacy website,  
+          <span className="text-emerald-400"> Storyline Online®</span>, streams videos featuring  
+          celebrated actors reading children’s books alongside creatively produced illustrations.
         </p>
-        <p className="mt-6">
-       <p className="text-2xl"> Foundation create more Storyline</p> Online videos and new content, so
-          that we can read to millions more children every month. By giving a
-          gift to Storyline Online, you can help advance children’s literacy,
-          and improve children’s lives.Your support makes a world of 
-          difference. The <span className="text-blue-700">SAG-AFTRA Foundation’s</span>  three-time Emmy®-nominated and
-          award-winning children’s literacy website, Storyline Online®, streams
-          videos featuring celebrated actors reading children’s books alongside
-          creatively produced illustrations. Readers include Connie Britton,
-          <span  className="text-blue-700">Terry Crews,</span> Viola Davis, Rosario Dawson, Jennifer Garner, John
-          Lithgow, Chris Pine, Meryl Streep, Oprah Winfrey and dozens more.  
+        <p className="text-lg leading-relaxed text-gray-300 mt-3">
+          Reading aloud to children has been shown to improve reading, writing, and communication skills,  
+          <span className="text-emerald-600"> logical thinking, concentration,</span> and general academic aptitude.
+        </p>
+        <p className="text-lg leading-relaxed text-gray-200 mt-6">
+          Teachers use Storyline Online in classrooms, and doctors play it in children's hospitals.  
+          It’s available **24/7** for children, parents, and educators worldwide.
+        </p>
 
-
-          Reading aloud to children has been shown to improve reading, writing
-          and communication skills, logical thinking and concentration, and
-          general academic aptitude, as well as inspire a lifelong love of
-          reading. Teachers use Storyline Online in their classrooms, and
-          doctors and nurses play Storyline Online in children’s hospitals.
-          Storyline Online is available 24 hours a day for children, parents,
-          caregivers and educators worldwide. Each book includes supplemental
-          curriculum developed by a credentialed elementary educator,
+        <h2 className="text-2xl text-blue-400 mt-8">Support Storyline Online</h2>
+        <p className="text-lg leading-relaxed text-gray-300 mt-3">
+          Help the <span className="text-blue-700">SAG-AFTRA Foundation</span> create more Storyline Online videos.  
+          Your support makes a **huge difference** in children's literacy worldwide.
         </p>
       </div>
 
-      <div></div>
+      <div className="flex flex-col gap-4">
+        <button
+          className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg shadow-lg transition-all"
+          onClick={() => navigate("/login")}
+        >
+          Login
+        </button>
+        <button
+          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg transition-all"
+          onClick={() => navigate("/register")}
+        >
+          Register
+        </button>
+      </div>
     </div>
   );
 };
