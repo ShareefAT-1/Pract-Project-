@@ -1,12 +1,13 @@
-// Slider.jsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Slider = () => {
   const [books, setBooks] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
   const [loading, setLoading] = useState(false);
   const visibleImages = 5;
+  const navigate=useNavigate();
 
   useEffect(() => {
     setLoading(true);
@@ -33,12 +34,12 @@ const Slider = () => {
   return (
     <div className="relative w-[1200px] mx-auto mt-8 overflow-hidden">
       {" "}
-      {/* Increased from 1000px to 1200px */}
+
       {books.length > 0 ? (
         <div>
           <div className="flex gap-6 transition-all duration-300">
             {" "}
-            {/* Increased gap from 5 to 6 */}
+
             {books
               .slice(startIndex, startIndex + visibleImages)
               .concat(
@@ -52,6 +53,7 @@ const Slider = () => {
                   key={book.id}
                   src={book.image}
                   alt={"Error"}
+                  onClick={()=>navigate(`/bookdetails/${book.id}`)}
                   className="hov flex w-[220px] h-[150px] object-cover rounded-lg"
                 />
               ))}

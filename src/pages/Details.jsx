@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import SearchBox from "../components/Searchbox";
 
 const Details = () => {
   const [book, setBook] = useState({});
@@ -22,11 +23,7 @@ const Details = () => {
   return (
     <div>
       <div className="flex justify-center mt-10">
-        <input
-          type="text"
-          placeholder="Search..."
-          className=" bg-fuchsia-900 px-10 py-2 rounded  text-white focus:outline-none focus:ring focus:ring-gray-600"
-        />
+        <SearchBox/>
       </div>
       <div className="p-11 " style={{ marginTop: "-20px" }}>
         <h1 className="text-4xl text-blue-400">{book.title}</h1>

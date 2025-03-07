@@ -2,8 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+
+ const navigate=useNavigate();
+
   const handlelogout=()=>{
-    navigate=useNavigate();
+    navigate("/login")
     localStorage.removeItem("user")
   }
   return (
@@ -33,7 +36,7 @@ const Profile = () => {
           <button className="flex items-center gap-2 px-6 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition-all">
             ✏️ Edit Profile
           </button>
-          <button className="flex items-center px-5 py-2 rounded-full bg-red-500 text-white hover:bg-red-700 transition-all" onClick={handlelogout()}>
+          <button className="flex items-center px-5 py-2 rounded-full bg-red-500 text-white hover:bg-red-700 transition-all" onClick={handlelogout}>
             🚶‍➡️ Log Out
           </button>
         </div>

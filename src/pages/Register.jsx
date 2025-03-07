@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
   const navigate=useNavigate();
+  const handleform=(e)=>{
+    e.preventDefault();
+  }
   return (
     <div className=" reg-bg bg-cover bg-center" >
       <div className="flex items-center min-h-screen " style={{marginLeft:"50px"}}>
@@ -13,7 +16,7 @@ const Register = () => {
           <p className="text-center text-cyan-950 mb-8">
             Your one stop library.
           </p>
-          <form className="mb-20">
+          <form className="mb-20" onSubmit={handleform}>
             <div className="mb-4">
               <label htmlFor="email" className="block text-emerald-950">
                 Email or Phone

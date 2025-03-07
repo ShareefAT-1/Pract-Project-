@@ -45,7 +45,7 @@ const Home = () => {
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-gray-400">
+            <a href="/register" className="hover:text-gray-400">
               Subscribe
             </a>
           </li>
