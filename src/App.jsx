@@ -35,6 +35,7 @@ function App() {
         <Route path="/bookdetails/:id" element={<Details />} />
         <Route path="/aboutus" element={<About />} />
         <Route path="/awards" element={<Awards/>} />
+        <Route path="/searchResults/:query" element={<Search/>} />
 
         
       </Routes>

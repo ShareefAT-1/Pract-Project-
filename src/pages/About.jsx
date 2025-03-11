@@ -5,17 +5,31 @@ const About = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-row p-16 gap-14">
+    <div className="flex flex-row p-16 gap-14" style={{ position: 'relative'}}>
+    <video 
+      src="https://videos.pexels.com/video-files/1484703/1484703-sd_640_360_25fps.mp4" 
+      autoPlay 
+      loop 
+      muted 
+      style={{ 
+        position: 'absolute', 
+        top: 0, 
+        left: 0, 
+        width: '100%', 
+        height:'100vh',
+        
+        objectFit: 'cover' 
+      }} ></video>
 
-      <div className="w-full md:w-[500px] flex justify-center">
+      <div className="w-full md:w-[500px] flex justify-center z-10">
         <img
           src="https://market-resized.envatousercontent.com/themeforest.net/files/292405845/Preview-large-preview.__large_preview.jpg?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=dd1159d9bb1583384770ad69f3910bb7045ff3ecc5b88b5d3f1f34a954381e64"
           alt="Storyline"
-          className="rounded-lg shadow-lg"
+          className="rounded-3xl shadow-lg"
         />
       </div>
 
-      <div className="w-full md:w-[900px]">
+      <div className="w-full md:w-[900px]  z-10 " style={{ backgroundColor: 'rgba(0, 0, 0, 0.0)' }}>
         <h1 className="text-4xl text-fuchsia-700 mb-3">The SAG-AFTRA Foundation’s</h1>
         <p className="text-lg leading-relaxed text-gray-200">
           Three-time Emmy®-nominated and award-winning children’s literacy website,  

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Slider = () => {
+const Slider = ({category}) => {
   const [books, setBooks] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -12,8 +12,9 @@ const Slider = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://www.dbooks.org/api/recent")
+      .get(`https://www.dbooks.org/api/search/${category}`)
       .then((res) => {
+        console.log(res)
         setBooks(res.data.books);
         setLoading(false);
       })
@@ -32,12 +33,12 @@ const Slider = () => {
   };
 
   return (
-    <div className="relative w-[1200px] mx-auto mt-8 overflow-hidden">
+    <div className="relative w-[1200px] mx-auto mt-10 ">
       {" "}
 
       {books.length > 0 ? (
         <div>
-          <div className="flex gap-6 transition-all duration-300">
+          <div className="flex  gap-6 ">
             {" "}
 
             {books
@@ -49,13 +50,15 @@ const Slider = () => {
                 )
               )
               .map((book) => (
-                <img
+                <div className=" hover:scale-110 w-[220px] h-[300px]  transition-all duration-300 rounded-lg overflow-hidden border border-gray-500">
+                  <img
                   key={book.id}
                   src={book.image}
                   alt={"Error"}
                   onClick={()=>navigate(`/bookdetails/${book.id}`)}
-                  className="hov flex w-[220px] h-[150px] object-cover rounded-lg"
+                  className="  flex  w-full h-full object-cover "
                 />
+                </div>
               ))}
           </div>
 

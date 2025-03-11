@@ -19,7 +19,7 @@ const Home = () => {
   const user=JSON.parse(localStorage.getItem("user"))
 
   return (
-    <div>
+    <div >
       <nav className="flex justify-between items-center p-4 bg-gray-900 text-white">
         <div className="ml-8">
           <img src={logo} className="rounded-3xl" width={50} alt="Logo" />
@@ -83,17 +83,24 @@ const Home = () => {
         </div>
       </div> */}
       <div className=" mt-7">
-        <Slider />
+        <Slider category={"python"} />
       </div>
       <div>
-        <Slider />
+        <Slider category={"javascript"} />
       </div>
       <div>
-        <Slider />
+        <Slider category={"Computer"} />
       </div>
       <div>
-        <Slider />
+        <Slider category={"History"} />
       </div>
+
+      {/* <div className="flex justify-center h-60">
+        
+        <img src="https://media3.giphy.com/media/iJJ6E58EttmFqgLo96/giphy.webp?cid=790b7611nwd4dwm3spmqqkehm6sqlveuo5xddu1fnueuds6h&ep=v1_gifs_trending&rid=giphy.webp&ct=g" alt="" />
+
+      </div> */}
+
     </div>
   );
 };
