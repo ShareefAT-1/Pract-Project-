@@ -4,7 +4,7 @@ const Awards = () => {
   return (
     <div className="flex flex-col items-center bg-gray-900 min-h-screen text-white py-12">
        <video 
-      src="https://videos.pexels.com/video-files/1877846/1877846-sd_640_360_30fps.mp4" 
+      src="https://videos.pexels.com/video-files/856857/856857-sd_960_506_30fps.mp4" 
     //  best Video: // https://videos.pexels.com/video-files/4323285/4323285-sd_640_360_30fps.mp4
       autoPlay 
       loop 

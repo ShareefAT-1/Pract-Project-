@@ -42,15 +42,15 @@ const Details = () => {
       {/* {book.length > 0 ? ( */}
         <div className="absolute opacity-80">
           <div className="p-11" style={{ marginTop: "-20px" }}>
-            <h1 className="text-4xl text-blue-400">{book.title}</h1>
-            <h2 className="text-3xl text-cyan-200">About Book</h2>
+            <h1 className="text-4xl text-blue-300">{book.title}</h1>
+            <h2 className="text-3xl text-emerald-200">About Book</h2>
             <h3 className="text-2xl text-emerald-300">{book.authors}</h3>
           </div>
           <div className="flex gap-14 p-16" style={{ marginTop: "-95px" }}>
             <img src={book.image} alt="Error" className=" rounded-2xl" />
             <div className="z-10">
               <h1 className="text-3xl mb-3 text-blue-400">Description</h1>
-              <div style={{ width: "600px",color:"white" }}>
+              <div className="text-white" style={{ width: "600px"}}>
                 {book.description} Lorem ipsum, dolor sit amet consectetur
                 adipisicing elit. Expedita molestiae debitis reprehenderit
                 reiciendis necessitatibus, ut ab tempora nobis vitae optio, nisi
