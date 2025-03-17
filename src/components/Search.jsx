@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Search = () => {
   const [books, setBooks] = useState([]);
-  // const [query, setQuery] = useState("");
-
   const { query } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`https://www.dbooks.org/api/search/${query}`)
@@ -21,19 +20,12 @@ const Search = () => {
 
   return (
     <div className="bg-fuchsia-950 flex justify-center min-h-screen p-5">
-      {/* <input
-        className="text-amber-50 bg-blue-300 px-4 py-2 rounded ml-[650px] focus:outline-none focus:ring focus:ring-gray-600"
-        type="text"
-        placeholder="Search books..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      /> */}
-
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center mt-5">
         {books.map((book) => (
           <div
             key={book.id}
             className="bg-gray-800 text-white m-3 p-4 rounded-lg w-[300px]"
+            onClick={() => navigate(`/bookdetails/${book.id}`)} 
           >
             <div className="flex flex-col items-center">
               <div className="mb-3">
