@@ -1,6 +1,6 @@
-# 📚 DBooks Library
+# 📚 Anna’s Library
 
-A simple and sleek online library built with React, Tailwind CSS, and the DBooks API. This app allows users to browse, search, and view digital books across various categories. Perfect for book lovers and developers learning API integration and frontend development.
+A sleek and responsive online library built with **React**, **Tailwind CSS**, and the **DBooks API**. Users can browse, search, and view digital books across various categories in a clean, component-based UI. Ideal for book lovers and developers exploring API integration and modern frontend architecture.
 
 ## 🚀 Features
 
